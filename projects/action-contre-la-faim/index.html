@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Action Contre La Faim — Stratégie Digitale | Lina Timsi</title>
+  <meta name="description" content="Projet de stratégie digitale 360° pour Action Contre La Faim : audit, SEO, social media, podcast, infographie et plan promotionnel sur 12 semaines." />
+  <link rel="canonical" href="https://lynatimsi.github.io/projects/action-contre-la-faim/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://lynatimsi.github.io/projects/action-contre-la-faim/" />
+  <meta property="og:title" content="Action Contre La Faim — Stratégie Digitale | Lina Timsi" />
+  <meta property="og:description" content="Campagne digitale complète sur 12 semaines pour Action Contre La Faim. Audit, SEO, social media, podcast et plan promotionnel." />
+  <meta property="og:image" content="https://lynatimsi.github.io/projects/action-contre-la-faim/cover-podcast.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="../../style.css" />
+
+  <style>
+    /* ===== Project Page Specific Styles ===== */
+    :root {
+      --acf-red: #E94E1B;
+    }
+
+    /* Navbar identical to homepage */
+    .project-page .navbar.scrolled {
+      background: rgba(253, 248, 243, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .project-hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 140px;
+      padding-bottom: 6rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #FFF5F0 0%, #FDF8F3 50%, #FFF0E8 100%);
+    }
+
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: radial-gradient(circle at 20% 80%, var(--accent-lavender) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, var(--accent-peach) 0%, transparent 45%);
+      opacity: 0.2;
+    }
+
+    .project-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 2.4rem;
+      text-align: center;
+    }
+
+    .project-client {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-peach-dark);
+      margin-bottom: 2rem;
+    }
+
+    .project-client::before,
+    .project-client::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--accent-peach);
+      opacity: 0.6;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 1.6rem;
+    }
+
+    .project-subtitle {
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .project-tags .tag {
+      background: rgba(255,255,255,0.9);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.6rem;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .project-tags .tag:hover {
+      background: var(--accent-peach);
+      color: white;
+      border-color: var(--accent-peach);
+    }
+
+    /* Fix tags overlapping text in hero */
+    .project-hero .project-tags {
+      position: static;
+      bottom: auto;
+      left: auto;
+      z-index: auto;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2.4rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--accent-peach-dark);
+      line-height: 1;
+    }
+
+    .stat-item-label {
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    /* Sections */
+    .project-section {
+      padding: 10rem 0;
+    }
+
+    .project-section-alt {
+      background: var(--bg-secondary);
+    }
+
+    .section-header-left {
+      text-align: left;
+      margin-bottom: 5rem;
+    }
+
+    .section-header-left .section-title {
+      text-align: left;
+    }
+
+    .lead-text {
+      font-size: 1.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item-wide {
+      grid-column: span 2;
+    }
+
+    .gallery-caption {
+      padding: 1.2rem 1.6rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+    }
+
+    /* Podcast */
+    .podcast-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 3.2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .podcast-cover {
+      width: 200px;
+      height: 200px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      box-shadow: var(--shadow-md);
+    }
+
+    .podcast-info h3 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .podcast-info p {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .podcast-player {
+      width: 100%;
+    }
+
+    audio {
+      width: 100%;
+      height: 48px;
+      border-radius: 50px;
+    }
+
+    /* Deliverables */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .deliverable-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2.8rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .deliverable-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .deliverable-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .deliverable-card h4 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .deliverable-card p {
+      font-size: 1.4rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .deliverable-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      background: var(--accent-peach);
+      color: white;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      transition: var(--transition);
+      align-self: flex-start;
+    }
+
+    .deliverable-link:hover {
+      background: var(--accent-peach-dark);
+      transform: translateY(-2px);
+    }
+
+    .deliverable-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .deliverable-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .deliverable-preview {
+      width: 100%;
+      height: 160px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 1.2rem;
+      background: var(--bg-secondary);
+    }
+
+    /* PDF Modal */
+    .pdf-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .pdf-modal.active {
+      display: flex;
+    }
+    .pdf-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+    }
+    .pdf-modal-content {
+      position: relative;
+      z-index: 1;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      width: 92vw;
+      height: 88vh;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      padding: 2.4rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .pdf-modal-content iframe {
+      flex-grow: 1;
+      width: 100%;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .pdf-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.6rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 2.4rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 2;
+    }
+    .pdf-modal-close:hover {
+      background: var(--accent-peach);
+      color: white;
+      border-color: var(--accent-peach);
+    }
+
+    /* Planning */
+    .planning-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .planning-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+
+    .planning-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .planning-side {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .planning-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2.4rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .planning-card h4 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .planning-card ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .planning-card li {
+      font-size: 1.4rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .planning-card li::before {
+      content: '✓';
+      color: var(--accent-peach-dark);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Skills tags large */
+    .skills-large {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-tag {
+      padding: 1rem 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .skill-tag:hover {
+      background: var(--accent-peach);
+      color: white;
+      border-color: var(--accent-peach);
+      transform: translateY(-2px);
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      transition: var(--transition);
+    }
+
+    .back-link:hover {
+      color: var(--accent-peach-dark);
+      transform: translateX(-4px);
+    }
+
+    .back-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .podcast-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .podcast-cover {
+        margin: 0 auto;
+      }
+      .planning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-title {
+        font-size: 3.6rem;
+      }
+      .project-subtitle {
+        font-size: 1.7rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item-wide {
+        grid-column: span 1;
+      }
+      .project-section {
+        padding: 6rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="project-page">
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="../../index.html" class="logo" aria-label="Accueil">Lina.</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html#projects">Retour aux projets</a></li>
+        <li><a href="../../index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="../../index.html" onclick="toggleMenu()">Accueil</a></li>
+      <li><a href="../../index.html#projects" onclick="toggleMenu()">Projets</a></li>
+      <li><a href="../../index.html#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="project-hero">
+      <div class="project-hero-content" data-aos="fade-up">
+        <div class="project-client">Action Contre La Faim</div>
+        <h1 class="project-title">Stratégie Digitale <em style="color: var(--accent-peach);">360°</em></h1>
+        <p class="project-subtitle">
+          Campagne digitale complète pour une ONG internationale : audit, plan SEO, création de contenus, podcast et plan promotionnel sur 12 semaines.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Stratégie digitale</span>
+          <span class="tag">SEO</span>
+          <span class="tag">Social Media</span>
+          <span class="tag">Content Marketing</span>
+          <span class="tag">Podcast</span>
+          <span class="tag">Data & Planification</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stats-grid">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="stat-item-number">12</div>
+          <div class="stat-item-label">Semaines de projet</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-item-number">7+</div>
+          <div class="stat-item-label">Livrables</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-item-number">4</div>
+          <div class="stat-item-label">Posts réseaux</div>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-item-number">1</div>
+          <div class="stat-item-label">Podcast produit</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contexte -->
+    <section class="project-section">
+      <div class="container">
+        <a href="../../index.html#projects" class="back-link" data-aos="fade-right">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Retour au portfolio
+        </a>
+        <div class="section-header section-header-left" data-aos="fade-up">
+          <span class="section-tag">Le brief</span>
+          <h2 class="section-title">Contexte & Objectifs</h2>
+        </div>
+        <p class="lead-text" data-aos="fade-up">
+          Dans le cadre d'un projet stratégique de 12 semaines, j'ai conçu et déployé une <strong>campagne digitale complète</strong> pour Action Contre La Faim. L'objectif : renforcer la présence en ligne de l'ONG, sensibiliser un public engagé et démontrer l'impact concret des actions humanitaires à travers des contenus authentiques et data-informed.
+        </p>
+        <div class="skills-large" data-aos="fade-up" data-aos-delay="100">
+          <span class="skill-tag">Audit digital</span>
+          <span class="skill-tag">Benchmark concurrentiel</span>
+          <span class="skill-tag">Plan SEO</span>
+          <span class="skill-tag">Requêtage mots-clés</span>
+          <span class="skill-tag">Mind Mapping</span>
+          <span class="skill-tag">Gestion de projet</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visuels RS -->
+    <section class="project-section project-section-alt">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Social Media</span>
+          <h2 class="section-title">Créations réseaux sociaux</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item-wide" data-aos="fade-up">
+            <img src="post1/1.png" alt="Post Instagram Action Contre La Faim 1" />
+            <div class="gallery-caption">Post 1 — Sensibilisation à la mission terrain</div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+            <img src="post2/1.png" alt="Post Instagram Action Contre La Faim 2" />
+            <div class="gallery-caption">Post 2 — Série émotionnelle</div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="post2/2.png" alt="Post Instagram Action Contre La Faim 2 variante" />
+            <div class="gallery-caption">Post 2 — Variante visuelle</div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+            <img src="post3/1.png" alt="Post Instagram Action Contre La Faim 3" />
+            <div class="gallery-caption">Post 3 — Impact & résultats</div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="post3/2.png" alt="Post Instagram Action Contre La Faim 3 variante" />
+            <div class="gallery-caption">Post 3 — Format carrousel</div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+            <img src="post4/1.png" alt="Post Instagram Action Contre La Faim 4" />
+            <div class="gallery-caption">Post 4 — Appel à l'action</div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="post4/2.png" alt="Post Instagram Action Contre La Faim 4 variante" />
+            <div class="gallery-caption">Post 4 — Storytelling visuel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Podcast -->
+    <section class="project-section">
+      <div class="container">
+        <div class="section-header section-header-left" data-aos="fade-up">
+          <span class="section-tag">Audio</span>
+          <h2 class="section-title">Podcast — Des voix au plus près de la résilience</h2>
+        </div>
+        <div class="podcast-card" data-aos="fade-up">
+          <img src="cover-podcast.png" alt="Cover du podcast Action Contre La Faim" class="podcast-cover" />
+          <div class="podcast-info">
+            <h3>Épisode 1</h3>
+            <p>Production audio complète : rédaction du script, enregistrement, montage et design de la cover. Un format immersif pour donner la parole aux bénéficiaires et aux équipes terrain.</p>
+            <audio controls class="podcast-player">
+              <source src="podcast.mp3" type="audio/mpeg" />
+              Votre navigateur ne supporte pas la lecture audio.
+            </audio>
+            <div style="margin-top: 1.6rem;">
+              <a href="script-podcast.pdf" target="_blank" class="deliverable-link" style="margin-right: 1rem;">
+                <span>Voir le script</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Livrables -->
+    <section class="project-section project-section-alt">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Documents</span>
+          <h2 class="section-title">Livrables clés</h2>
+        </div>
+        <div class="deliverables-grid">
+          <div class="deliverable-card" data-aos="fade-up" data-aos-delay="0">
+            <embed src="plan-promo.pdf#toolbar=0&navpanes=0" type="application/pdf" class="deliverable-preview" />
+            <h4>Plan Promotionnel</h4>
+            <p>Stratégie de diffusion complète avec calendrier éditorial, cibles, canaux et KPIs.</p>
+            <div class="deliverable-actions">
+              <a href="#" onclick="openPdfModal('plan-promo.pdf'); return false;" class="deliverable-link">
+                <span>Aperçu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </a>
+              <a href="plan-promo.pdf" download class="deliverable-link deliverable-link-alt">
+                <span>Télécharger</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="deliverable-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="deliverable-icon">📝</div>
+            <h4>Article SEO</h4>
+            <p>Article optimisé pour le référencement naturel avec plan de mots-clés et structure sémantique.</p>
+            <div class="deliverable-actions">
+              <a href="#" onclick="openPdfModal('article.pdf'); return false;" class="deliverable-link">
+                <span>Aperçu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </a>
+              <a href="article.pdf" download class="deliverable-link deliverable-link-alt">
+                <span>Télécharger</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="deliverable-card" data-aos="fade-up" data-aos-delay="200">
+            <embed src="infographie.pdf#toolbar=0&navpanes=0" type="application/pdf" class="deliverable-preview" />
+            <h4>Infographie</h4>
+            <p>Datavisualisation des impacts et résultats de l'association pour un format viral et engageant.</p>
+            <div class="deliverable-actions">
+              <a href="#" onclick="openPdfModal('infographie.pdf'); return false;" class="deliverable-link">
+                <span>Aperçu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </a>
+              <a href="infographie.pdf" download class="deliverable-link deliverable-link-alt">
+                <span>Télécharger</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="deliverable-card" data-aos="fade-up" data-aos-delay="300">
+            <embed src="script-podcast.pdf#toolbar=0&navpanes=0" type="application/pdf" class="deliverable-preview" />
+            <h4>Script Podcast</h4>
+            <p>Fiche de script détaillée avec timing, transitions, interviews et indications sonores.</p>
+            <div class="deliverable-actions">
+              <a href="#" onclick="openPdfModal('script-podcast.pdf'); return false;" class="deliverable-link">
+                <span>Aperçu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </a>
+              <a href="script-podcast.pdf" download class="deliverable-link deliverable-link-alt">
+                <span>Télécharger</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="deliverable-card" data-aos="fade-up" data-aos-delay="400">
+            <embed src="audit.pdf#toolbar=0&navpanes=0" type="application/pdf" class="deliverable-preview" />
+            <h4>Audit Digital</h4>
+            <p>Analyse complète de la présence digitale d'Action Contre La Faim : positionnement, forces et axes d'amélioration.</p>
+            <div class="deliverable-actions">
+              <a href="#" onclick="openPdfModal('audit.pdf'); return false;" class="deliverable-link">
+                <span>Aperçu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </a>
+              <a href="audit.pdf" download class="deliverable-link deliverable-link-alt">
+                <span>Télécharger</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planning & Methodo -->
+    <section class="project-section">
+      <div class="container">
+        <div class="section-header section-header-left" data-aos="fade-up">
+          <span class="section-tag">Méthodologie</span>
+          <h2 class="section-title">Planning & Organisation</h2>
+        </div>
+        <div class="planning-grid">
+          <div class="planning-image" data-aos="fade-right">
+            <img src="planning.png" alt="Planning Gantt du projet ACF sur 12 semaines" />
+          </div>
+          <div class="planning-side">
+            <div class="planning-card" data-aos="fade-left" data-aos-delay="100">
+              <h4><span>🗓️</span> Phases du projet</h4>
+              <ul>
+                <li>Audit & cadrage stratégique</li>
+                <li>Recherche SEO & mots-clés</li>
+                <li>Production des contenus visuels</li>
+                <li>Création infographie & vidéo</li>
+                <li>Plan promotionnel & diffusion</li>
+                <li>Analyse IA & finalisation</li>
+              </ul>
+            </div>
+            <div class="planning-card" data-aos="fade-left" data-aos-delay="200">
+              <h4><span>🧠</span> Mind Map</h4>
+              <img src="mindmap.jpg" alt="Mind Map Action Contre La Faim" style="width: 100%; border-radius: var(--radius-sm); margin-top: 0.8rem;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="project-section project-section-alt">
+      <div class="container" style="text-align: center;">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Savoir-faire</span>
+          <h2 class="section-title">Compétences mobilisées</h2>
+        </div>
+        <div class="skills-large" style="justify-content: center;" data-aos="fade-up">
+          <span class="skill-tag">Community Management</span>
+          <span class="skill-tag">Copywriting</span>
+          <span class="skill-tag">SEO</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">Canva / Design</span>
+          <span class="skill-tag">Montage Audio</span>
+          <span class="skill-tag">Planification Gantt</span>
+          <span class="skill-tag">Analyse de données</span>
+          <span class="skill-tag">Social Ads</span>
+          <span class="skill-tag">Storytelling</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="contact">
+      <div class="container">
+        <div class="contact-content" data-aos="fade-up">
+          <h2 class="contact-title">Vous avez un projet similaire ?</h2>
+          <p class="contact-desc">Parlons-en !</p>
+          <a href="../../index.html#contact" class="btn btn-primary btn-large">Me contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Design & Création avec <span class="heart">❤️</span> par Lina Timsi</p>
+    </div>
+  </footer>
+
+  <!-- PDF Modal -->
+  <div id="pdf-modal" class="pdf-modal">
+    <div class="pdf-modal-overlay" onclick="closePdfModal()"></div>
+    <div class="pdf-modal-content">
+      <button class="pdf-modal-close" onclick="closePdfModal()" aria-label="Fermer">&times;</button>
+      <iframe id="pdf-viewer" src="" frameborder="0"></iframe>
+      <a id="pdf-download" href="" download class="btn btn-secondary" style="margin-top: 1.6rem; align-self: flex-start;">Télécharger le document</a>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 80, duration: 700 });
+
+    // Mobile menu
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger');
+      menu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // PDF Modal
+    function openPdfModal(src) {
+      document.getElementById('pdf-viewer').src = src;
+      document.getElementById('pdf-download').href = src;
+      document.getElementById('pdf-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePdfModal() {
+      document.getElementById('pdf-modal').classList.remove('active');
+      document.getElementById('pdf-viewer').src = '';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePdfModal();
+    });
+  </script>
+</body>
+</html>
